@@ -1,205 +1,43 @@
-<? xml 버전 = " 1.0 " 인코딩 = " utf-8 " ?>
-< androidx .constraintlayout.widget.ConstraintLayout xmlns : android = " http://schemas.android.com/apk/res/android "
-xmlns : 앱 = " http://schemas.android.com/apk/res-auto "
-xmlns : 도구 = " http://schemas.android.com/tools "
-안드로이드 : layout_width = " match_parent "
-안드로이드 : layout_height = " match_parent "
-도구 : 컨텍스트 = " .MainActivity " >
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-< 선형 레이아웃
-안드로이드 : 아이디 = " @+id/linearLayout "
-안드로이드 : layout_width = " 404dp "
-안드로이드 : layout_height = " 88dp "
-안드로이드 : 방향 = " 수직 "
-안드로이드 : 배경 = " #00FF00 "
-앱 : layout_constraintEnd_toEndOf = " 부모 "
-앱 : layout_constraintStart_toStartOf = " 부모 "
-앱 : layout_constraintTop_toTopOf = " 부모 " >
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tabLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
-< 텍스트뷰
-안드로이드 : 아이디 = " @+id/textView2 "
-안드로이드 : layout_width = " match_parent "
-안드로이드 : layout_height = " match_parent "
-android : text = " 판매하는 도넛 "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : textSize = " 30sp " />
-</ 선형 레이아웃 >
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-< 날짜 선택기
-안드로이드 : 아이디 = " @+id/dpSpinner "
-안드로이드 : layout_width = " 290dp "
-안드로이드 : layout_height = " 93dp "
-안드로이드 : calendarViewShown = " 거짓 "
-안드로이드 : datePickerMode = " 스피너 "
-앱 : layout_constraintEnd_toEndOf = " 부모 "
-앱 : layout_constraintHorizontal_bias = " 0.495 "
-앱 : layout_constraintStart_toStartOf = " 부모 "
-도구 : layout_editor_absoluteY = " 114dp " />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday" />
 
-< 테이블 레이아웃
-안드로이드 : layout_width = " 0dp "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : layout_margin = " 50dp "
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday" />
 
-앱 : layout_constraintBottom_toBottomOf = " 부모 "
-앱 : layout_constraintLeft_toLeftOf = " 부모 "
-앱 : layout_constraintRight_toRightOf = " 부모 "
-앱 : layout_constraintTop_toTopOf = " 부모 " >
-
-< TableRow >
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-android : text = " 제목 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-android : text = " 도서 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 아이디 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-android : text = " 보관기간 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-</ TableRow >
-
-< TableRow
-안드로이드 : layout_width = " match_parent "
-안드로이드 : layout_height = " match_parent " >
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 1 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 2 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 3 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 4 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-</ TableRow >
-< TableRow
-안드로이드 : layout_width = " match_parent "
-안드로이드 : layout_height = " match_parent " >
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 1 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 2 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 3 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 4 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-</ TableRow >
-< TableRow
-안드로이드 : layout_width = " match_parent "
-안드로이드 : layout_height = " match_parent " >
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 1 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 2 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 3 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-< 텍스트뷰
-안드로이드 : layout_width = " wrap_content "
-안드로이드 : layout_height = " wrap_content "
-안드로이드 : 배경 = " #FFFFFF "
-안드로이드 : 중력 = " 중심 "
-안드로이드 : 텍스트 = " 4 "
-안드로이드 : textColor = " #000000 "
-안드로이드 : textSize = " 25sp " />
-</ TableRow >
-</ 테이블 레이아웃 >
-
-
-</ androidx .constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wednesday" />
+    </com.google.android.material.tabs.TabLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
