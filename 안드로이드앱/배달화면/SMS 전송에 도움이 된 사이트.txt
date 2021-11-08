@@ -1,0 +1,3 @@
+참고한 자료
+https://stackoverflow.com/questions/53952118/java-lang-securityexception-sending-sms-message-uid-10282-does-not-have-androi/53953712
+https://travel-nomad.tistory.com/24?category=784038
