@@ -34,6 +34,7 @@ class OrderdetailPage : AppCompatActivity(), OnMapReadyCallback{
     private lateinit var  fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationCallback: LocationCallback
     var db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    var db2: FirebaseFirestore = FirebaseFirestore.getInstance()
     var count:Int=0
     var init_count:Int=0
     lateinit var maker:Marker
@@ -52,7 +53,14 @@ class OrderdetailPage : AppCompatActivity(), OnMapReadyCallback{
         if(intent.hasExtra("customer_id")){
             customer_id=intent.getStringExtra("customer_id").toString()
         }
-        btn_orderdetail_mapLoad.setOnClickListener {
+        btn_detailOrder_delivery.setOnClickListener {
+            val args = Bundle()
+            args.putParcelable("libraryPoint",locpoint)
+            args.putParcelable("customerPoint",customerpoint)
+            var deliveryMap_intent= Intent(this, Deliveryman_ShowMap::class.java)
+            deliveryMap_intent.putExtra("locbundle",args)
+            deliveryMap_intent.putExtra("customerid",customer_id)
+            startActivity(deliveryMap_intent)
         }
     }
     fun startProcess(){
@@ -63,6 +71,7 @@ class OrderdetailPage : AppCompatActivity(), OnMapReadyCallback{
     override fun onMapReady(googleMap: GoogleMap) {
         Log.d("메시지","onMapReady")
         mMap = googleMap
+        mMap2 = googleMap
         db.collection("Orders").whereEqualTo("customerid", customer_id)
             .get().addOnSuccessListener { doc ->
                 Log.d("메시지", "파이어스토어 사용 중")
@@ -72,37 +81,35 @@ class OrderdetailPage : AppCompatActivity(), OnMapReadyCallback{
                     for (libindex in 0 until jsonArray.length()) {
                         val Object = jsonArray.getJSONObject(libindex)
                         if (Object.getString("name")
-                                .equals(index.data["selectlib"].toString())
-                        ) {
+                                .equals(index.data["orderlib"].toString())) {
                             locpoint = LatLng(Object.getDouble("xcnts"), Object.getDouble("ydnts"))
                             orders = index.toObject(Orders::class.java)
-                            Log.d("메시지",orders.orderlib.toString())
+                            Log.d("메시지","찾은 도서관 이름 "+orders.orderlib.toString())
+                            Log.d("메시지","찾은 도서관 위치 "+locpoint.latitude+" "+locpoint.longitude)
                             break
                         }
-                        db.collection("customers").whereEqualTo("id", customer_id)
-                            .get().addOnSuccessListener { customdoc ->
-                                for (index in customdoc) {
-                                    customerpoint = LatLng(
-                                        index.data["xcnts"].toString().toDouble(),
-                                        index.data["ydnts"].toString().toDouble()
-                                    )
-                                    detailOrdername.setText(index.data["name"].toString())
-                                    detailOrderid.setText(index.data["id"].toString())
-                                    detailOrderAddress.setText(index.data["address"].toString())
-                                    detailOrderlibrary.setText(index.data["selectLib"].toString())
-                                }
-                            }
-
                     }
-
+                    Log.d("메시지","Orders 데베 접근 완료")
                 }
                 Log.d("메시지", "데베 데이터 접근 완료")
-                mMap2 = googleMap
-                locpoint=LatLng(34.791823, 126.365268)
-                customerpoint=LatLng(34.791823, 126.365268)
-                mMap2.addMarker(MarkerOptions().position(locpoint).title("안녕"))
-                mMap2.addMarker(MarkerOptions().position(customerpoint).title("인녕"))
-
+                mMap2.addMarker(MarkerOptions().position(locpoint).title(orders.orderlib.toString()))
+            }
+        db2.collection("customers").whereEqualTo("id", customer_id)
+            .get().addOnSuccessListener { customdoc ->
+                Log.d("메시지","고객 데이터베이스 접근")
+                for (customindex in customdoc) {
+                    Log.d("메시지","고객 주소 접근")
+                    customerpoint = LatLng(
+                        customindex.data["xcnts"].toString().toDouble(),
+                        customindex.data["ydnts"].toString().toDouble()
+                    )
+                    Log.d("메시지","고객 위치"+customerpoint.latitude+" "+customerpoint.longitude)
+                    detailOrdername.setText(customindex.data["name"].toString())
+                    detailOrderid.setText(customindex.data["id"].toString())
+                    detailOrderAddress.setText(customindex.data["address"].toString())
+                    detailOrderlibrary.setText(customindex.data["selectLib"].toString())
+                }
+                mMap2.addMarker(MarkerOptions().position(customerpoint).title( detailOrdername.text.toString()))
 
             }
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
