@@ -10,3 +10,7 @@
 └https://s-engineer.tistory.com/110
 4.파이어베이스(파이어스토어)
 └교재: Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린
+5.스레드 사용
+└교재: 이것이 안드로이드다 with 코틀린
+└https://magicalcode.tistory.com/48
+└https://velog.io/@dlrmwl15/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%8A%A4%EB%A0%88%EB%93%9CThread%EC%99%80-%ED%95%B8%EB%93%A4%EB%9F%ACHandler
