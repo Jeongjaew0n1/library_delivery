@@ -1,12 +1,12 @@
-구글 맵API
-교재: 이것이 안드로이드다 with 코틀린
-배달경로 안내
-https://tmapapi.sktelecom.com/main.html#webservice/sample/WebSampleRoutes
-https://community.openapi.sk.com/t/tmap-api-google-map/7976
-https://stickode.com/detail.html?no=2066
-SMS 송신 기능
-https://stackoverflow.com/questions/53952118/java-lang-securityexception-sending-sms-message-uid-10282-does-not-have-androi/53953712
-https://developer.android.com/reference/android/telephony/SmsManager
-https://s-engineer.tistory.com/110
-파이어베이스(파이어스토어)
-교재: 이것이 안드로이드다 with 코틀린
+1.구글 맵API
+└교재: 이것이 안드로이드다 with 코틀린
+2.배달경로 안내
+└https://tmapapi.sktelecom.com/main.html#webservice/sample/WebSampleRoutes
+└https://community.openapi.sk.com/t/tmap-api-google-map/7976
+└https://stickode.com/detail.html?no=2066
+3.SMS 송신 기능
+└https://stackoverflow.com/questions/53952118/java-lang-securityexception-sending-sms-message-uid-10282-does-not-have-androi/53953712
+└https://developer.android.com/reference/android/telephony/SmsManager
+└https://s-engineer.tistory.com/110
+4.파이어베이스(파이어스토어)
+└교재: Do it! 깡샘의 안드로이드 앱 프로그래밍 with 코틀린
