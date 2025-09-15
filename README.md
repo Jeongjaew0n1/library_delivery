@@ -8,23 +8,23 @@
 
 🛠 사용 기술
 - Android 앱
-언어: Kotlin
-개발 환경: Android Studio
-기능 구현:
-로그인 / 회원가입
-도서 검색 및 대출 신청
-배달 상태 확인
-관리자 기능: 도서 등록, 승인 처리 등
+  - 언어: Kotlin
+  - 개발 환경: Android Studio
+- 기능 구현:
+  - 로그인 / 회원가입
+  - 도서 검색 및 대출 신청
+  - 배달 상태 확인
+  - 관리자 기능: 도서 등록, 승인 처리 등
 
 - 데이터베이스
-DB 종류: MySQL or Firebase (구현 방식에 따라 수정)
-구성:
-사용자 테이블
-도서 테이블
-대출 요청/배달 상태 테이블
+  - DB 종류: MySQL or Firebase (구현 방식에 따라 수정)
+- 구성:
+  -사용자 테이블
+  - 도서 테이블
+  - 대출 요청/배달 상태 테이블
 
 - 기타 도구
-Git & GitHub (버전 관리)
-Google Maps API (위치 기반 기능 사용 시)
-Firebase Authentication (로그인 시스템 사용 시)
+  - Git & GitHub (버전 관리)
+  - Google Maps API (위치 기반 기능 사용 시)
+  - Firebase Authentication (로그인 시스템 사용 시)
 
